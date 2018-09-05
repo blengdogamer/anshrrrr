@@ -1,28 +1,35 @@
-const Discord = require("discord.js");
-const Client = new Discord.Client();
+nyconst Discord = require('discord.js');
+const A7MD = new Discord.Client();
 
-
-console.log("Welcome Again  by Fox!");
-
-
-Client.on("guildMemberRemove", member => {
-  member.send(`***
-حياكم الله السيرفر الافتتاح قريب
-https://discord.gg/BGF6BaR
-[${member}]**`);
-
-  });
  
+A7MD.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(` 
+**
+حياكم الله السيرفر 
+نستناكم بل افتتاج
 
-  Client.on('guildMemberAdd', member => {
-  member.send(`***:
-حياكم الله السيرفر الافتتاح قريب
-https://discord.gg/BGF6BaR
-[${member}]**`);
+                               [  ] 
+الدعووة خاصة لك ... [ ${member}  ]
+**`) 
+}).catch(console.error)
+});
+client.on('ready', function(){
+    var ms = 10000 ;
+    var setGame = [' h ','i | u','l ','f','t'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/D.JPEI`);
+    }, ms);
 
+});
 
-  });
-
-
-
-Client.login("BOT_TOKEN");
+A7MD.login('BOT_TOKEN');
